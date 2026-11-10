@@ -1,0 +1,17 @@
+{
+  "name": "nostr-release-kit-publisher",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "description": "Publish Android APK releases as kind-30063 Nostr events on Blossom mirrors, driven by a per-app JSON config.",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "dependencies": {
+    "nostr-tools": "2.25.2"
+  }
+}

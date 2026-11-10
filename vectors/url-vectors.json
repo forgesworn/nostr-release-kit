@@ -1,0 +1,142 @@
+[
+ {
+  "url": "https://h/<sha>",
+  "ok": true
+ },
+ {
+  "url": "https://h/<sha>.apk",
+  "ok": true
+ },
+ {
+  "url": "https://nostr.download/<sha>.apk",
+  "ok": true
+ },
+ {
+  "url": "https://blossom.example:8443/<sha>",
+  "ok": true
+ },
+ {
+  "url": "https://h/<sha>.a1B2c3D4",
+  "ok": true
+ },
+ {
+  "url": "https://h/<sha>.apks12345",
+  "ok": false
+ },
+ {
+  "url": "https://h/<sha>.",
+  "ok": false
+ },
+ {
+  "url": "https://h/<sha>.apk.apk",
+  "ok": false
+ },
+ {
+  "url": "https://h/<sha>?x=1",
+  "ok": false
+ },
+ {
+  "url": "https://h/<sha>#f",
+  "ok": false
+ },
+ {
+  "url": "https://h/a/b/<sha>",
+  "ok": false
+ },
+ {
+  "url": "https://h/uploads/<sha>",
+  "ok": false
+ },
+ {
+  "url": "https://h//<sha>",
+  "ok": false
+ },
+ {
+  "url": "https://h/<sha>/",
+  "ok": false
+ },
+ {
+  "url": "http://h/<sha>",
+  "ok": false
+ },
+ {
+  "url": "HTTPS://h/<sha>",
+  "ok": false
+ },
+ {
+  "url": "https://u@h/<sha>",
+  "ok": false
+ },
+ {
+  "url": "https://u:p@h/<sha>",
+  "ok": false
+ },
+ {
+  "url": "https://h:/<sha>",
+  "ok": false
+ },
+ {
+  "url": "https://h:123456/<sha>",
+  "ok": false
+ },
+ {
+  "url": "https://h:12a/<sha>",
+  "ok": false
+ },
+ {
+  "url": "https://[2001:db8::1]/<sha>",
+  "ok": false
+ },
+ {
+  "url": "https://blossom_x.example/<sha>",
+  "ok": false
+ },
+ {
+  "url": "https://bücher.example/<sha>",
+  "ok": false
+ },
+ {
+  "url": "https://h\\\\<sha>",
+  "ok": false
+ },
+ {
+  "url": "https://h/\\\\<sha>",
+  "ok": false
+ },
+ {
+  "url": "https://h/\t<sha>",
+  "ok": false
+ },
+ {
+  "url": "https://h/<sha>\n",
+  "ok": false
+ },
+ {
+  "url": "https://h/<sha> ",
+  "ok": false
+ },
+ {
+  "url": "https://h <x>/<sha>",
+  "ok": false
+ },
+ {
+  "url": "https:///<sha>",
+  "ok": false
+ },
+ {
+  "url": "https://h",
+  "ok": false
+ },
+ {
+  "url": "https://h/<SHAUP>",
+  "ok": false
+ },
+ {
+  "url": "https://h/0123456789012345678901234567890123456789012345678901234567890123",
+  "ok": false
+ },
+ {
+  "url": "",
+  "ok": false
+ }
+]

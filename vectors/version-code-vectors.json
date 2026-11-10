@@ -1,0 +1,15 @@
+[
+ { "version": "0.1.0", "code": 1000 },
+ { "version": "0.2.0", "code": 2000 },
+ { "version": "1.2.3", "code": 1002003 },
+ { "version": "0.1", "code": 1000 },
+ { "version": "7", "code": 7000000 },
+ { "version": "2000.999.999", "code": 2000999999 },
+ { "version": "2001.0.0", "code": null },
+ { "version": "0.1000.0", "code": null },
+ { "version": "0.0.1000", "code": null },
+ { "version": "0.1.0.4", "code": null },
+ { "version": "x.1.0", "code": null },
+ { "version": "1.-1.0", "code": null },
+ { "version": "", "code": null }
+]

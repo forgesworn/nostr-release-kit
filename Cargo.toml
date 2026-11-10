@@ -1,0 +1,33 @@
+[package]
+name = "nostr-release-kit"
+version = "0.1.0"
+edition = "2021"
+description = "Publish and verify app releases announced as Nostr kind-30063 events (APK on Blossom, hash, size and signing-certificate pin), and check for and install updates."
+license = "MIT"
+authors = ["ForgeSworn"]
+repository = "https://github.com/forgesworn/nostr-release-kit"
+readme = "README.md"
+keywords = ["nostr", "android", "updates", "blossom", "apk"]
+categories = ["os::android-apis"]
+exclude = ["target/", "tools/node_modules/"]
+
+[lib]
+name = "nostr_release_kit"
+path = "src/lib.rs"
+
+[features]
+default = []
+# The Android half: JNI calls into dev.forgesworn.release.Updater (see android/README.md).
+android = ["dep:jni", "dep:ndk-context"]
+# Test doubles (`testing::RecordingInstaller`, `testing::FakeFetcher`) and the staging methods that
+# put an Updater / Catalog into a made-up state (`Updater::demo_offer`, ...). `demo_offer` swaps the
+# pinned release key for a throwaway one, so a shipped build must never enable this.
+testing = []
+
+[dependencies]
+nostr = "=0.44.8"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+log = "0.4"
+jni = { version = "0.21", optional = true }
+ndk-context = { version = "0.1", optional = true }

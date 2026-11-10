@@ -1,0 +1,47 @@
+{
+ "channel": "exampleapp-android-apk",
+ "pubkey": "e006ba9bc962c9f354d1194d5fab6c5f26907469f8900841181cd1d54a0131ce",
+ "version": "0.1.0",
+ "version_code": 1000,
+ "size": 1048576,
+ "cert": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+ "notes": "First in-app update release.",
+ "event": {
+  "kind": 30063,
+  "created_at": 1791886220,
+  "tags": [
+   [
+    "d",
+    "exampleapp-android-apk"
+   ],
+   [
+    "version",
+    "0.1.0"
+   ],
+   [
+    "version_code",
+    "1000"
+   ],
+   [
+    "x",
+    "50d858e0985ecc7f60418aaf0cc5ab587f42c2570a884095a9e8ccacd0f6545c"
+   ],
+   [
+    "size",
+    "1048576"
+   ],
+   [
+    "cert",
+    "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+   ],
+   [
+    "url",
+    "https://blossom.example.com/50d858e0985ecc7f60418aaf0cc5ab587f42c2570a884095a9e8ccacd0f6545c.apk"
+   ]
+  ],
+  "content": "First in-app update release.",
+  "pubkey": "e006ba9bc962c9f354d1194d5fab6c5f26907469f8900841181cd1d54a0131ce",
+  "id": "6cbc2793d56b8181fab59e3b50ff8c371ebd8a84416f209512ec24cbd2d5f4e8",
+  "sig": "a694131deea6060b12025e2c5a7ac4ee6c0f96977017f9dc2c79d738e7d0d7003730167711960b48dcb7ddd59ec187044e988ad6cb1a1f51cefaf5fd81e231ce"
+ }
+}

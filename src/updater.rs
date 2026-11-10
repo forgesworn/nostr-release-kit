@@ -936,7 +936,11 @@ mod tests {
         let mut u = updater_for(&keys, 1000);
         // The default installer has no installer.
         struct NoInstaller;
-        impl ApkInstaller for NoInstaller {}
+        impl ApkInstaller for NoInstaller {
+            fn running_package(&mut self) -> Option<String> {
+                None
+            }
+        }
         let mut p = NoInstaller;
         u.tick(0.0, &mut p);
         u.apply_events(&[sign(&keys, good_tags(2000))], 5_000_000);

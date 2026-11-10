@@ -60,8 +60,9 @@ pub struct ApkJob {
     pub release_cert: String,
 }
 
-/// OS services for installing APKs. Every method has a "cannot" default, so an
-/// app on a platform with no installer implements nothing.
+/// OS services for installing APKs. Every method but `running_package` has a "cannot"
+/// default, so an app on a platform with no installer implements only that one
+/// (returning `None`).
 pub trait ApkInstaller {
     /// This platform can install an APK itself (Android), so the launch-time
     /// update check is worth making. A manual check works anywhere.
@@ -73,9 +74,11 @@ pub trait ApkInstaller {
     /// `Context.getPackageName()`), `None` if it cannot say. The updater compares it with
     /// `Config.own_package` at the first tick and turns updates off, with a visible error,
     /// when they differ: a wrong `own_package` would otherwise read another app's versionCode.
-    fn running_package(&mut self) -> Option<String> {
-        None
-    }
+    ///
+    /// Required, with no default, so that an app forwarding the trait method by method
+    /// cannot leave the check out by accident. A platform that cannot say returns `None`
+    /// (the check is then skipped).
+    fn running_package(&mut self) -> Option<String>;
 
     /// SHA-256 (lowercase hex) of the certificate this app is signed with, for
     /// the update's `cert` check. Android: `PackageManager` signing info.
@@ -143,7 +146,11 @@ mod tests {
     #[test]
     fn the_default_installer_cannot_install() {
         struct None_;
-        impl ApkInstaller for None_ {}
+        impl ApkInstaller for None_ {
+            fn running_package(&mut self) -> Option<String> {
+                None
+            }
+        }
         let mut i = None_;
         assert!(!i.can_install_apk());
         assert!(i.apk_start(&ApkJob { urls: vec![], sha256: String::new(), size: 0, package: String::new(), cert: String::new(), release_cert: String::new() }).is_err());

@@ -111,9 +111,12 @@ use nostr_release_kit::android::AndroidInstaller;
 let mut installer = AndroidInstaller;
 ```
 
-Elsewhere implement `ApkInstaller` yourself, or take the default: every method has a
-"cannot" default, so a platform with no installer implements nothing (`can_install_apk`
-is false, so there is no launch-time check; a manual check still works). In tests use
+Elsewhere implement `ApkInstaller` yourself, or take the defaults: every method but
+`running_package` has a "cannot" default, so a platform with no installer implements only
+`running_package` (returning `None`). `can_install_apk` is then false, so there is no
+launch-time check; a manual check still works. If your platform forwards to
+`AndroidInstaller` method by method, forward `running_package` too: it is required so that
+the own-package check cannot be left out by accident. In tests use
 `testing::RecordingInstaller` (set its `own_package` to the app's package, and
 `running_package` to exercise the mismatch check) and `testing::FakeFetcher`. They need
 no feature.

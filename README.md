@@ -152,7 +152,8 @@ pub trait PendingFetch {
 
 pub trait ApkInstaller { /* apk_start, apk_status, apk_cancel, apk_active_package,
     apk_open_install_settings, own_cert_sha256, can_install_apk,
-    installed_version_code, open_package; every method has a "cannot" default */ }
+    installed_version_code, open_package: each has a "cannot" default;
+    running_package (required: the app's real package, or None if unknown) */ }
 ```
 
 With the `android` feature, `nostr_release_kit::android::AndroidInstaller` is an
